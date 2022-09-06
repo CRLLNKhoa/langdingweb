@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniapps</title>
+    <link rel="icon" href="./assets/img/favicon.gif" type="image/x-icon" />
+    <!-- CSS -->
+        <!-- Bootstrap -->
+            <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+        <!-- Base -->
+            <link rel="stylesheet" href="./assets/css/base.css">
+            <link rel="stylesheet" href="./assets/css/main.css">
+            <link rel="stylesheet" href="./assets/css/responesive.css">
+        <!-- Font Awe -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login & SignUp -->
+        <div class="overlay-account">
+            <span class="account-close fa-solid fa-xmark" onclick="closeRL()"></span>
+            <div class="account-box">
+                <div class="account-register">  
+                    <div class="select-register" onclick="openRegister()"></div>
+                    <form action="" name="formRegister" class="form-register" onsubmit="return validateFormR()">
+                        <h1 class="label-account label-register">Register</h1>
+                        <div class="name-register form-register__item">
+                            <input type="text" name="name-register">
+                            <span class="erro-form erro-name-register"></span>
+                        </div>
+                        <div class="email-register form-register__item">
+                            <input type="text" name="email-register">
+                            <span class="erro-form erro-email-register"></span>
+                        </div>
+                        <div class="pass-register form-register__item">
+                            <input type="password" name="pass-register">
+                            <div class="sub-pass">
+                                <p></p>
+                                <p>*Mật khẩu từ 8 - 24 kí tự</p>
+                                <p>*Chứa 1 kí tự viêt hoa, 1 kí tự đặc biệt và không được bất đầu bằng số.</p>
+                            </div>
+                        </div>
+                        <span><input type="checkbox" name="check" id="check" onclick="checkRules()"> Tôi đồng ý với các <a href="" style="color: var(--primary);"> điều khoản</a></span>
+                        <button class="btn btn-register">Register</button>
+                    </form>
+                </div>
+                <div class="account-login">
+                    <div class="select-login" onclick="openLogin()"></div>
+                    <form action="" name="formLogin" class="form-login" onsubmit="return validateFormL()">
+                        <h1 class="label-account label-login">Login</h1>
+                        <div class="email-login form-register__item">
+                            <input type="text" name="email-login">
+                            <span class="erro-form erro-email-login"></span>
+                        </div>
+                        <div class="pass-login form-register__item">
+                            <input type="password" name="pass-login">
+                        </div>
+                        <div class="code-login form-register__item">
+                            <div class="code-show">
+                                <span></span>
+                            </div>
+                            <input type="number" name="code-login" class="code-input" onchange="inputcode()">
+                        </div>
+                        <span style="margin-right: auto; margin-left: 60px "><a href="">Quên mật khẩu</a></span>
+                        <button class="btn btnLogin">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!-- Nav -->
+        <div class="container-fluid nav-box">
+            <div class="container nav-content">
+                <a href="#" class="nav-logo">
+                    <span>L</span><span>N</span><span>K</span><span>H</span><span>O</span><span>A</span>
+                </a>
+                <div class="nav-menu">
+                    <ul class="nav-menu__list">
+                        <li class="nav-menu__item"><a href="">Home</a></li>
+                        <li class="nav-menu__item"><a href="#introduce">About</a> </li>
+                        <li class="nav-menu__item"><a href="">Services</a> </li>
+                        <li class="nav-menu__item"><a href="">Features</a> </li>
+                        <li class="nav-menu__item"><a href="">Blog</a> </li>
+                        <li class="nav-menu__item"><a href="">Contact Us</a> </li>
+                    </ul>
+                </div>
+                <div class="nav-login">
+                    <button class="btn btn-login" onclick="openRL()">Login</button>
+                </div>
+            </div>
+        </div>
+    <!-- Lading page -->
+    <div class="container-fluid landing-page">
+        <div class="container landing-page__box">
+            <div class="landing-page__left">
+                <div class="landing-page__content">
+                    <h1>Website to share the knowledge learned</h1>
+                    <p>With the knowledge I have learned and learned, I have tried to build small applications with the little knowledge that I have. Although there is nothing good and there are many shortcomings, I hope you will still happily accept and leave comments for me, so that I can improve and learn many things.</p>
+                </div>
+                <div class="landing-page__btn">
+                    <button class="btn-discover">DISCOVER MORE</button>
+                    <button class="btn-icon-text">
+                        <div class="btn-icon">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <span>How it works</span>
+                    </button>
+                </div>
+            </div>
+            <div class="landing-page__right">
+                <img src="./assets/img/rocket.svg" alt="">
+            </div>
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+        </div>
+    </div>
+    <!-- Main -->
+    <div class="container">
+        <div class="row mt-100">
+            <div class="col col-12 col-lg-12 col-md-12">
+                <div class="introduce" id="introduce">
+                    <div class="introduce__item">
+                        <img src="./assets/img/info.png" alt="">
+                    </div>
+                    <div class="introduce__item">
+                        <h1>Some information about me</h1>
+                        <p> 
+                            I am a student at An Giang University - Vietnam National University, Ho Chi Minh City. 
+                            I am studying information technology, currently I am learning to build website interfaces. 
+                            I love turning complex problems into simple, beautiful, and intuitive designs.
+                        </p>
+                        <li><i class="fa-solid fa-circle-dot"></i>    My name: Lương Nguyễn Khoa</li>
+                        <li><i class="fa-solid fa-circle-dot"></i>    I am a student at An Giang University - Vietnam National University, Ho Chi Minh City. </li>
+                        <li><i class="fa-solid fa-circle-dot"></i>    I'm a front-end developer</li>
+                        <a class="btn-vcard" href="https://crllnkhoa.github.io/Vcard/" target="_blank">
+                            KNOW MORE
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-100">
+            <div class="col col-12 col-lg-12 col-md-12">
+                <div class="course">
+                    <p class="sub-course">-Lessons learned-</p>
+                    <h1>Completed Courses</h1>
+                    <div class="list-course row g-5">
+                        <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                          <div class="item-course">
+                            <span>01</span>
+                            <h4 style="margin-bottom: 10px;">HTML & CSS</h4>
+                            <p>Learn HTML and CSS knowledge on the F8 website and school classes.</p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                            <div class="item-course">
+                              <span>02</span>
+                              <h4 style="margin-bottom: 10px;">Responesive</h4>
+                              <p>Learn Responesive knowledge on the F8 website and school classes.</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                            <div class="item-course">
+                              <span>03</span>
+                              <h4 style="margin-bottom: 10px;">Javascript Basic</h4>
+                              <p>Learn Javascript knowledge on the F8 website and school classes.</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                            <div class="item-course">
+                              <span>04</span>
+                              <h4 style="margin-bottom: 10px;">Bootstrap</h4>
+                              <p>Learn Bootstrap knowledge on the getbootstrap.com website and school classes and youtube.</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                            <div class="item-course">
+                              <span>05</span>
+                              <h4 style="margin-bottom: 10px;">HTML & CSS & Javascript</h4>
+                              <p>Learn HTML and CSS & Javascript knowledge on the github website and youtube.</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                            <div class="item-course">
+                              <span>06</span>
+                              <h4 style="margin-bottom: 10px;">HTML & CSS & Js</h4>
+                              <p>Learn HTML and CSS, Js knowledge on the W3C website and school classes.</p>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-100">
+            <div class="col col-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="summary">
+                    <p class="sub-course">-Summary-</p>
+                    <h1>Summary for Newbies</h1>
+                    <div class="row g-4 summary__list">
+                        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                            <div class="summary__item">
+                                <div class="summary__box-img">
+                                    <img src="./assets/img/js arr/arrayjsthumb.jpg" alt="">
+                                </div>
+                                <div class="summary__box-info">
+                                    <h3 class="box-info__name">Array in Javascript!!</h3>
+                                    <p>Arrays trong JavaScript cho người mới bắt đầu
+                                        Khóa học đầy đủ: <a href="https://bit.ly/2VdSN2s">https://bit.ly/2VdSN2s</a>
+                                    </p>
+                                    <button class="read-more" onclick="openShowSummary()">Read more <i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                            <div class="summary__item">
+                                <div class="summary__box-img">
+                                    <img src="./assets/img/jscheatsheet/jsthumb.jfif">
+                                </div>
+                                <div class="summary__box-info">
+                                    <h3 class="box-info__name">JavaScript Cheat sheet</h3>
+                                    <p>JavaScript Cheat sheet toàn diện PDF bao gồm
+                                        Bản Pdf đầy đủ: <a href="https://bit.ly/3ToDnVT">https://bit.ly/3ToDnVT</a>
+                                    </p>
+                                    <button class="read-more" onclick="openShowSummary()">Read more <i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                            <div class="summary__item">
+                                <div class="summary__box-img">
+                                    <img src="./assets/img/csscheatsheet/1.jpg" alt="">
+                                </div>
+                                <div class="summary__box-info">
+                                    <h3 class="box-info__name">Css Cheat Sheet!!!</h3>
+                                    <p>Css Cheat Sheet cho người mới bắt đầu
+                                        Khóa học đầy đủ: <a href="https://bit.ly/3R346Wz">https://bit.ly/3R346Wz</a>
+                                    </p>
+                                    <button class="read-more" onclick="openShowSummary()">Read more <i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+                            <div class="summary__item">
+                                <div class="summary__box-img">
+                                    <img src="./assets/img/js arr/arrayjsthumb.jpg" alt="">
+                                </div>
+                                <div class="summary__box-info">
+                                    <h3 class="box-info__name">Bootstrap 5 CheatSheet!!</h3>
+                                    <p>Bootstrap 5 CheatSheet
+                                        rất quan trọng để biết điều này
+                                        Giúp đỡ đầy đủ HTML CSS JS
+                                        Cheak
+                                    </p>
+                                    <button class="read-more" onclick="openShowSummary()">Read more <i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="show-summary">
+            <div class="show-summary__heading">
+                <button class="show-summary__btn show-summary__heading-dark" onclick="dark()"><i class="fa-solid fa-moon"></i></button>
+                <button class="show-summary__btn show-summary__heading-close" onclick="closeSummary()"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+            <div class="show-summary__list row">
+                <div class="show-summary__item col-12 col-lg-12 col-md-12 col-sm-12" id="summary1">
+                    <h1>Array in JavaScript!!</h1>
+                    <div class="img-1">
+                        <img src="./assets/img/js arr/arrayjsthumb.jpg" alt="">
+                    </div>
+                    <div class="img-2 row">
+                        <img src="./assets/img/js arr/1.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/js arr/2.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/js arr/3.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/js arr/4.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/js arr/5.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/js arr/6.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/js arr/7.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                    </div>
+                </div>
+                <div class="show-summary__item col-12 col-lg-12 col-md-12 col-sm-12" id="summary2">
+                    <h1>JavaScript Cheat sheet</h1>
+                    <div class="img-2 row">
+                        <img src="./assets/img/jscheatsheet/1.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/2.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/3.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/4.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/5.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/6.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/7.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/8.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/9.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/10.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/jscheatsheet/11.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                    </div>
+                </div>
+                <div class="show-summary__item col-12 col-lg-12 col-md-12 col-sm-12" id="summary3">
+                    <h1>CSS Cheat Sheet!!</h1>
+                    <div class="img-1 row">
+                        <img src="./assets/img/csscheatsheet/1.jpg" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                    </div>
+                </div>
+                <div class="show-summary__item col-12 col-lg-12 col-md-12 col-sm-12" id="summary4">
+                    <h1>Bootstrap Cheat Sheet!!</h1>
+                    <div class="img-2 row">
+                        <img src="./assets/img/BootstrapCS/1.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/BootstrapCS/2.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/BootstrapCS/3.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/BootstrapCS/4.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/BootstrapCS/5.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/BootstrapCS/6.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/BootstrapCS/7.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <img src="./assets/img/BootstrapCS/8.jpg" alt="" class="col-12 col-lg-6 col-md-6 col-sm-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/apps.js"></script>
+</html>
