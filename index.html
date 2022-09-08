@@ -13,6 +13,8 @@
             <link rel="stylesheet" href="./assets/css/base.css">
             <link rel="stylesheet" href="./assets/css/main.css">
             <link rel="stylesheet" href="./assets/css/responesive.css">
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
         <!-- Font Awe -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
@@ -42,6 +44,7 @@
                             </div>
                         </div>
                         <span><input type="checkbox" name="check" id="check" onclick="checkRules()"> Tôi đồng ý với các <a href="" style="color: var(--primary);"> điều khoản</a></span>
+                        <span class="registerM" onclick="loginMShow()" style="color: var(--primary);">Login</span>
                         <button class="btn btn-register">Register</button>
                     </form>
                 </div>
@@ -62,7 +65,10 @@
                             </div>
                             <input type="number" name="code-login" class="code-input" onchange="inputcode()">
                         </div>
-                        <span style="margin-right: auto; margin-left: 60px "><a href="">Quên mật khẩu</a></span>
+                        <span class="changeRL">
+                            <span style="margin-right: auto; margin-left: 60px "><a href="">Quên mật khẩu</a></span>
+                            <span class="registerM" onclick="registerMShow()" style="color: var(--primary);">Register</span>
+                        </span>
                         <button class="btn btnLogin">Login</button>
                     </form>
                 </div>
@@ -78,15 +84,29 @@
                     <ul class="nav-menu__list">
                         <li class="nav-menu__item"><a href="">Home</a></li>
                         <li class="nav-menu__item"><a href="#introduce">About</a> </li>
-                        <li class="nav-menu__item"><a href="">Services</a> </li>
-                        <li class="nav-menu__item"><a href="">Features</a> </li>
-                        <li class="nav-menu__item"><a href="">Blog</a> </li>
-                        <li class="nav-menu__item"><a href="">Contact Us</a> </li>
+                        <li class="nav-menu__item"><a href="#course">Course</a></li>
+                        <li class="nav-menu__item"><a href="#summary">Summary</a></li>
+                        <li class="nav-menu__item"><a href="#question">Question</a></li>
                     </ul>
                 </div>
                 <div class="nav-login">
                     <button class="btn btn-login" onclick="openRL()">Login</button>
                 </div>
+            </div>
+        </div>
+    <!-- Nav Mobile -->
+        <button class="btn-show-nav-mb">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="nav-mb">
+            <div class="nav-mb-show">
+                <ul class="nav-mb-list">
+                    <li class="nav-mb-item"><a href="#">Home</a></li>
+                    <li class="nav-mb-item"><a href="#introduce">About</a></li>
+                    <li class="nav-mb-item"><a href="#course">Course</a></li>
+                    <li class="nav-mb-item"><a href="#summary">Summary</a></li>
+                    <li class="nav-mb-item"><a href="#question">Question</a></li>
+                </ul>
             </div>
         </div>
     <!-- Lading page -->
@@ -119,31 +139,39 @@
         <div class="row mt-100">
             <div class="col col-12 col-lg-12 col-md-12">
                 <div class="introduce" id="introduce">
-                    <div class="introduce__item">
-                        <img src="./assets/img/info.png" alt="">
-                    </div>
-                    <div class="introduce__item">
-                        <h1>Some information about me</h1>
-                        <p> 
-                            I am a student at An Giang University - Vietnam National University, Ho Chi Minh City. 
-                            I am studying information technology, currently I am learning to build website interfaces. 
-                            I love turning complex problems into simple, beautiful, and intuitive designs.
-                        </p>
-                        <li><i class="fa-solid fa-circle-dot"></i>    My name: Lương Nguyễn Khoa</li>
-                        <li><i class="fa-solid fa-circle-dot"></i>    I am a student at An Giang University - Vietnam National University, Ho Chi Minh City. </li>
-                        <li><i class="fa-solid fa-circle-dot"></i>    I'm a front-end developer</li>
-                        <a class="btn-vcard" href="https://crllnkhoa.github.io/Vcard/" target="_blank">
-                            KNOW MORE
-                            <span></span>
-                            <span></span>
-                        </a>
+                    <div class="row">
+                        <div class="col col-12 col-md-12 col-lg-6 col-sm-12">
+                            <div class="introduce__item">
+                                <img src="./assets/img/info.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-6">
+                            <div class="introduce__item">
+                               <div class="introduce__item-info">
+                                    <h1>Some information about me</h1>
+                                    <p> 
+                                        I am a student at An Giang University - Vietnam National University, Ho Chi Minh City. 
+                                        I am studying information technology, currently I am learning to build website interfaces. 
+                                        I love turning complex problems into simple, beautiful, and intuitive designs.
+                                    </p>
+                                    <li><i class="fa-solid fa-circle-dot"></i>    My name: Lương Nguyễn Khoa</li>
+                                    <li><i class="fa-solid fa-circle-dot"></i>    I am a student at An Giang University - Vietnam National University, Ho Chi Minh City. </li>
+                                    <li><i class="fa-solid fa-circle-dot"></i>    I'm a front-end developer</li>
+                                    <a class="btn-vcard" href="https://crllnkhoa.github.io/Vcard/" target="_blank">
+                                        KNOW MORE
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                               </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row mt-100">
             <div class="col col-12 col-lg-12 col-md-12">
-                <div class="course">
+                <div class="course" id="course">
                     <p class="sub-course">-Lessons learned-</p>
                     <h1>Completed Courses</h1>
                     <div class="list-course row g-5">
@@ -195,7 +223,7 @@
         </div>
         <div class="row mt-100">
             <div class="col col-12 col-lg-12 col-md-12 col-sm-12">
-                <div class="summary">
+                <div class="summary" id="summary">
                     <p class="sub-course">-Summary-</p>
                     <h1>Summary for Newbies</h1>
                     <div class="row g-4 summary__list">
@@ -209,7 +237,7 @@
                                     <p>Arrays trong JavaScript cho người mới bắt đầu
                                         Khóa học đầy đủ: <a href="https://bit.ly/2VdSN2s">https://bit.ly/2VdSN2s</a>
                                     </p>
-                                    <button class="read-more" onclick="openShowSummary()">Read more <i class="fa-solid fa-arrow-right"></i></button>
+                                    <button class="read-more" onclick="openShowSummary()">Read more &nbsp<i class="fa-solid fa-arrow-right"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +251,7 @@
                                     <p>JavaScript Cheat sheet toàn diện PDF bao gồm
                                         Bản Pdf đầy đủ: <a href="https://bit.ly/3ToDnVT">https://bit.ly/3ToDnVT</a>
                                     </p>
-                                    <button class="read-more" onclick="openShowSummary()">Read more <i class="fa-solid fa-arrow-right"></i></button>
+                                    <button class="read-more" onclick="openShowSummary()">Read more &nbsp<i class="fa-solid fa-arrow-right"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +265,7 @@
                                     <p>Css Cheat Sheet cho người mới bắt đầu
                                         Khóa học đầy đủ: <a href="https://bit.ly/3R346Wz">https://bit.ly/3R346Wz</a>
                                     </p>
-                                    <button class="read-more" onclick="openShowSummary()">Read more <i class="fa-solid fa-arrow-right"></i></button>
+                                    <button class="read-more" onclick="openShowSummary()">Read more &nbsp<i class="fa-solid fa-arrow-right"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -253,7 +281,7 @@
                                         Giúp đỡ đầy đủ HTML CSS JS
                                         Cheak
                                     </p>
-                                    <button class="read-more" onclick="openShowSummary()">Read more <i class="fa-solid fa-arrow-right"></i></button>
+                                    <button class="read-more" onclick="openShowSummary()">Read more &nbsp<i class="fa-solid fa-arrow-right"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -319,8 +347,214 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-100">
+            <div class="col col-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="question" id="question">
+                    <p class="sub-course">-Question-</p>
+                    <h1 class="question-title-main">Frequently asked Questions</h1>
+                    <div class="row g-2 question-box">
+                            <div class="col col-12 col-lg-4 col-md-4 col-sm-12 ">
+                                <div class="question__title">
+                                    <h1>Discover Frequently Asked Questions?</h1>
+                                    <button class="work-together">work together</button>
+                                </div>
+                            </div>
+                            <div class="col col-12 col-lg-8 col-md-8 col-sm-12">
+                                <div class="question-list">
+                                    <div class="question-item">
+                                        <div class="question-label" id="headingOne">
+                                            <p>
+                                                01. Line limit of paragraph.
+                                            </p>
+                                            <span>
+                                                <span class="question-plus question-plus1"><i class="fa-solid fa-plus"></i></span>
+                                                <span class="question-sub question-sub1"><i class="fa-solid fa-minus"></i></span>
+                                            </span>
+                                            
+                                        </div>
+                                        <div class="question-body" id="collapseOne">
+                                            The IDENTIFICATION DIVISION must be the first division in each COBOL source program, factory definition, object definition, and method definition. The identification division names the program, class, or method and identifies the factory definition and object definition. The IDENTIFICATION DIVISION can include the date a program, class, or method was written, the date of compilation, and other such documentary information.
+                                        </div>
+                                    </div>                               
+                                    <div class="question-item">
+                                        <div class="question-label" id="headingTwo">
+                                            <p>
+                                                02. Filter items with js.
+                                            </p>
+                                            <span>
+                                                <span class="question-plus question-plus2"><i class="fa-solid fa-plus"></i></span>
+                                                <span class="question-sub question-sub2"><i class="fa-solid fa-minus"></i></span>
+                                            </span>
+                                        </div>
+                                        <div class="question-body" id="collapseTwo">
+                                            The IDENTIFICATION DIVISION must be the first division in each COBOL source program, factory definition, object definition, and method definition. The identification division names the program, class, or method and identifies the factory definition and object definition. The IDENTIFICATION DIVISION can include the date a program, class, or method was written, the date of compilation, and other such documentary information.
+                                        </div>
+                                    </div>
+                                    <div class="question-item">
+                                        <div class="question-label" id="headingThree">
+                                            <p>
+                                                03. Curious about how to build your own UX strategy? Here are five simple steps.
+                                            </p>
+                                            <span>
+                                                <span class="question-plus question-plus3"><i class="fa-solid fa-plus"></i></span>
+                                                <span class="question-sub question-sub3"><i class="fa-solid fa-minus"></i></span>
+                                            </span>
+                                        </div>
+                                        <div class="question-body" id="collapseThree">
+                                            <h1>Quick start</h1>
+                                            <p>Looking to quickly add Bootstrap to your project? Use jsDelivr, a free open source CDN. Using a package manager or need to download the source files? Head to the downloads page.</p>
+                                            <h1>CSS</h1>
+                                            <p>Copy-paste the stylesheet <link> into your <head> before all other stylesheets to load our CSS.</p>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="question-item">
+                                        <div class="question-label" id="headingFour">
+                                            <p>
+                                                04. Jquery Collapse.
+                                            </p>
+                                            <span>
+                                                <span class="question-plus question-plus4"><i class="fa-solid fa-plus"></i></span>
+                                                <span class="question-sub question-sub4"><i class="fa-solid fa-minus"></i></span>
+                                            </span>
+                                        </div>
+                                        <div class="question-body" id="collapseFour">
+                                            The IDENTIFICATION DIVISION must be the first division in each COBOL source program, factory definition, object definition, and method definition. The identification division names the program, class, or method and identifies the factory definition and object definition. The IDENTIFICATION DIVISION can include the date a program, class, or method was written, the date of compilation, and other such documentary information.
+                                        </div>
+                                    </div>
+                                    <div class="question-item">
+                                        <div class="question-label" id="headingFive">
+                                            <p>
+                                                05. Curious about how to build your own UX strategy? Here are five simple steps.
+                                            </p>
+                                            <span>
+                                                <span class="question-plus question-plus5"><i class="fa-solid fa-plus"></i></span>
+                                                <span class="question-sub question-sub5"><i class="fa-solid fa-minus"></i></span>
+                                            </span>
+                                        </div>
+                                        <div class="question-body" id="collapseFive">
+                                            <p>Many of our components require the use of JavaScript to function. Specifically, they require jQuery, Popper, and our own JavaScript plugins. We use jQuery’s slim build, but the full version is also supported.
+                                                Place one of the following 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="container-fluid footer">
+        <div class="container">
+            <div class="footer-box">
+                <div class="row">
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-4">
+                        <h1>
+                            <a href="#" class="nav-logo">
+                                <span>LNKhoa</span>
+                                <p>Lorem ipsum dolor sit amet consecte tur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-2">
+                        <h1 style="font-size: 1.5rem;color: white;margin-bottom: 20px;">Our Services</h1>
+                        <p>Strategy & Research</p>
+                        <p>Web Development</p>
+                        <p>Web Solution</p>
+                        <p>Digital Merketing</p>
+                        <p>App Design</p>
+                        <p>Development</p>
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-2">
+                        <h1 style="font-size: 1.5rem;color: white;margin-bottom: 20px;">Company</h1>
+                        <p>Strategy & Research</p>
+                        <p>Our Services</p>
+                        <p>Our Portfolio</p>
+                        <p>Our Blog</p>
+                        <p>Latest News</p>
+                        <p>Contact Us</p>
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-4">
+                        <h1 style="font-size: 1.5rem;color: white;margin-bottom: 20px;">Contact Us</h1>
+                        <div class="footer__address">
+                            <p><i class="fa-sharp fa-solid fa-location-dot"></i>  An Hòa, Châu Thành, An Giang, Việt Nam</p>
+                            <p><i class="fa-solid fa-phone"></i> +084 3666 11 060</p>
+                            <p><i class="fa-solid fa-envelope"></i> LNKHOA1205@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/apps.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+     $(function(){
+        $('#headingOne').on("click", function(){
+            $('#headingOne').toggleClass("acctive-collapse")
+            $('#collapseOne').slideToggle()
+            if($('#headingOne').hasClass('acctive-collapse')){
+                    $('.question-plus1').hide()
+                    $('.question-sub1').show()
+            } else {
+                $('.question-plus1').show()
+                $('.question-sub1').hide()
+            }
+        })
+        $('#headingTwo').on("click", function(){
+            $('#collapseTwo').slideToggle()
+            $('#headingTwo').toggleClass("acctive-collapse")
+            if($('#headingTwo').hasClass('acctive-collapse')){
+                    $('.question-plus2').hide()
+                    $('.question-sub2').show()
+            } else {
+                $('.question-plus2').show()
+                $('.question-sub2').hide()
+            }
+        })
+        $('#headingThree').on("click", function(){
+            $('#collapseThree').slideToggle()
+            $('#headingThree').toggleClass("acctive-collapse")
+            if($('#headingThree').hasClass('acctive-collapse')){
+                    $('.question-plus3').hide()
+                    $('.question-sub3').show()
+            } else {
+                $('.question-plus3').show()
+                $('.question-sub3').hide()
+            }
+        })
+        $('#headingFour').on("click", function(){
+            $('#collapseFour').slideToggle()
+            $('#headingFour').toggleClass("acctive-collapse")
+            if($('#headingFour').hasClass('acctive-collapse')){
+                    $('.question-plus4').hide()
+                    $('.question-sub4').show()
+            } else {
+                $('.question-plus4').show()
+                $('.question-sub4').hide()
+            }
+        })
+        $('#headingFive').on("click", function(){
+            $('#collapseFive').slideToggle()
+            $('#headingFive').toggleClass("acctive-collapse")
+            if($('#headingFive').hasClass('acctive-collapse')){
+                    $('.question-plus5').hide()
+                    $('.question-sub5').show()
+            } else {
+                $('.question-plus5').show()
+                $('.question-sub5').hide()
+            }
+        })
+        $('.btn-show-nav-mb').on("click", function(){
+            $('.nav-mb').toggle();
+        })
+
+     })
+    </script>
 </html>

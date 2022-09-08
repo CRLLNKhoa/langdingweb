@@ -101,7 +101,7 @@ function validateFormL() {
     return false;
   }
 
-// Open Regoster & Login
+// Open Register & Login
 
 var openAccount = document.querySelector('.overlay-account');
 var btnLoginRL = document.querySelector('.btn-login');
@@ -117,6 +117,20 @@ function closeRL(){
     openAccount.style.display = 'none';
     openAccount.style.opacity = 0;
     openAccount.style.left = "100%";
+}
+
+var btnRegisterM = document.querySelector('.registerM');
+var registerBoxM = document.querySelector('.account-register');
+var loginBoxM = document.querySelector('.account-login');
+
+function registerMShow(){
+    registerBoxM.style.display = 'block';
+    loginBoxM.style.display = 'none';
+}
+
+function loginMShow(){
+    registerBoxM.style.display = 'none';
+    loginBoxM.style.display = 'block';
 }
 
 var btnOpenFormLogin = document.querySelector('.select-login');
@@ -153,3 +167,5 @@ function closeSummary(){
 function dark(){
     showSummary.classList.toggle('dark')
 }
+
+
